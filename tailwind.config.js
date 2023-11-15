@@ -16,6 +16,7 @@ module.exports = {
       '3': '#CCE3DE',
       '4': '#EAF4F4',
       '5': '#F6FFF8', //fondos
+      'anchor': '#0096FF'
     }
   },
   plugins: [],
