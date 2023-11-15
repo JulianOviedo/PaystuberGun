@@ -10,6 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      '1': '#6B9080',
+      '2': '#A4C3B2',
+      '3': '#CCE3DE',
+      '4': '#EAF4F4',
+      '5': '#F6FFF8', //fondos
+    }
   },
   plugins: [],
 }
