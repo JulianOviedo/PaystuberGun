@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BurgerMenu, Logo } from '../../../public/Icons'
+import { Logo } from '../../../public/Icons'
 import { ReactNode } from 'react'
 
 interface HomeLayoutProps {
@@ -21,7 +21,6 @@ export default function HomeLayout ({ children }: HomeLayoutProps) {
           <Logo />
         </div>
         <h1>UserName</h1>
-        <BurgerMenu />
         {/* <nav>
           {navLinks.map(link => {
             return (
