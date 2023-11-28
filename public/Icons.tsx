@@ -139,8 +139,8 @@ export const MailBox = () => {
         d='M3 5.08691L10 9.58691L17.5 5.08691M4 15.913C2.89543 15.913 2 15.0176 2 13.913V6.08692C2 4.98235 2.89543 4.08691 4 4.08691H16C17.1046 4.08691 18 4.98234 18 6.08691V13.913C18 15.0176 17.1046 15.913 16 15.913H4Z'
         stroke='black'
         strokeWidth='1.5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   )
@@ -159,8 +159,8 @@ export const LockIcon = () => {
         d='M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288'
         stroke='#000000'
         strokeWidth='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   )
@@ -179,8 +179,8 @@ export const BurgerMenu = () => {
         d='M3 12H21M3 6H21M3 18H21'
         stroke='#000000'
         strokeWidth='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
 
