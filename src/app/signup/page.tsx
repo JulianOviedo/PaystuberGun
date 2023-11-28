@@ -1,9 +1,28 @@
 'use client'
 import { useSignUpForm } from '(@/hooks/signUpForm)'
+import { useMutation } from 'react-query'
+import { Loader } from '../components/Loader'
+import { createUser } from '../services/createUser'
+import { newUserInfo } from '(@/types.td)'
+import toast from 'react-hot-toast'
 
 export default function SignUpPage () {
-  const api = process.env.NEXT_PUBLIC_API_URL
-  const { handleSubmit, handleChange } = useSignUpForm()
+  const { handleSubmit, handleChange, userData } = useSignUpForm()
+
+  const newUserMutation = useMutation(async (data: newUserInfo) => {
+    await createUser(data)
+  })
+
+  if (newUserMutation.isSuccess) {
+    toast.success('Account created successfully!')
+    newUserMutation.reset()
+  }
+
+  if (newUserMutation.isError) {
+    toast.error('Something went wrong... plese try again later')
+    newUserMutation.reset()
+  }
+
   return (
     <>
       <h1 className='text-4xl font-bold mt-8'>Sign up here!</h1>
@@ -24,7 +43,7 @@ export default function SignUpPage () {
           Repeat Password
           <input placeholder='Repeat password' type='password' className=' rounded h-10 bg-5 pl-2 w-full' />
         </label>
-        <button className='bg-1 rounded text-5 w-full h-10 mt-10'>Create an Account</button>
+        <button onClick={() => newUserMutation.mutate(userData)} className='bg-1 rounded text-5 w-full h-10 mt-10 flex justify-center items-center'>{newUserMutation.isLoading ? <Loader /> : 'Create an Account'}</button>
       </form>
     </>
   )
