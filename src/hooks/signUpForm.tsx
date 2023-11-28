@@ -17,11 +17,11 @@ export const useSignUpForm = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(userData)
   }
 
   return {
     handleChange,
-    handleSubmit
+    handleSubmit,
+    userData
   }
 }
