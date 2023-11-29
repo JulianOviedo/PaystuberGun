@@ -11,7 +11,7 @@ export async function POST (request) {
     console.log('Received Data:', username, email, password)
 
     return NextResponse.json({ message: 'New user has been created!' }, { status: 200 }, {
-      heeaders: {
+      headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization'
