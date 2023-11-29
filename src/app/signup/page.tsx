@@ -2,7 +2,7 @@
 import { useSignUpForm } from '(@/hooks/signUpForm)'
 import { useMutation } from 'react-query'
 import { Loader } from '../components/Loader'
-import { createUser } from '../services/CRUD'
+import { createUser } from '../../services/CRUD'
 import { newUserInfo } from '(@/types.td)'
 import toast from 'react-hot-toast'
 

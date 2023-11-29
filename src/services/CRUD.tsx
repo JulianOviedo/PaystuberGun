@@ -20,3 +20,14 @@ export const getEmployees = async () => {
     throw error
   }
 }
+
+export const deleteEmployee = async (dni: number) => {
+  try {
+    console.log(dni, 'desde el CRUD')
+    const response = await axios.delete(`http://localhost:3000/api/employees/?dni=${dni}`)
+    return response.data
+  } catch (error) {
+    console.error('Error deleting employee', error)
+    throw error
+  }
+}

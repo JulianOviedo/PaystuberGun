@@ -9,9 +9,10 @@ interface EmployeeCardProps {
   dni: number
   mail: string
   handleEdit: () => void
+  handleDelete: () => void
 }
 
-export const EmployeeCard = ({ name, lastName, added, dni, mail, handleEdit }: EmployeeCardProps) => {
+export const EmployeeCard = ({ name, lastName, added, dni, mail, handleEdit, handleDelete }: EmployeeCardProps) => {
   return (
     <div className=' text-center flex flex-row gap-2 '>
       <section className='bg-1 rounded p-4'>
@@ -20,10 +21,10 @@ export const EmployeeCard = ({ name, lastName, added, dni, mail, handleEdit }: E
         <p>Mail: {mail}</p>
       </section>
       <section className='flex flex-col gap-2 items-center justify-center'>
-        <div className='ml-1 w-8 h-8' onClick={() => handleEdit()}>
+        <div className='ml-1 w-8 h-8 cursor-pointer' onClick={() => handleEdit()}>
           <EditIcon />
         </div>
-        <div className='w-8 h-8'>
+        <div className='w-8 h-8 cursor-pointer' onClick={handleDelete}>
           <DeleteIcon />
         </div>
       </section>
