@@ -6,16 +6,6 @@ import { EmployeeCard } from '../../components/EmployeeCard'
 export default function PayrollPage () {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const mockEmployees = [
-    {
-      name: 'Julian',
-      lastName: 'Oviedo',
-      dni: 39624449,
-      added: new Date(Date.now()),
-      mail: 'julianovie234@gmail.com'
-    }
-  ]
-
   const handleEdit = () => {
     setIsModalOpen(true)
   }
