@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { SearchIcon } from '../../../../public/Icons'
-import { EmployeeCard } from '../../components/EmployeeCard'
+import { EmployeeList } from '(@/app/components/EmployeeList)'
 
 export default function PayrollPage () {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -41,14 +41,7 @@ export default function PayrollPage () {
         <input type='search' className='w-64 rounded p-2 pl-8 bg-3' placeholder='SEARCH BAR' />
       </div>
       <hr className='h-1 w-full' />
-      {mockEmployees.map(employee => {
-        const { name, lastName, dni, added, mail } = employee
-        return (
-          <div key={dni}>
-            <EmployeeCard name={name} lastName={lastName} dni={dni} added={added} mail={mail} handleEdit={handleEdit} />
-          </div>
-        )
-      })}
+      <EmployeeList handleEdit={handleEdit} />
     </main>
   )
 }
