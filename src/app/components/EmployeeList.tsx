@@ -18,12 +18,13 @@ export const EmployeeList = () => {
 
   const fetchEmployees = useQuery('employees', getEmployees)
   const deleteMutation = useMutation(async (dni: number) => {
-    console.log(dni, 'parametro enviado a la mutacion')
     await deleteEmployee(dni)
+  }, {
+    onSuccess: async () => {
+      await fetchEmployees.refetch() // Refetch the employees after successful deletion
+    }
   })
 
-  // const newUserMutation = useMutation(async (data: newUserInfo) => {
-  //   await createUser(data)
   return (
     <>
       {isModalOpen &&
