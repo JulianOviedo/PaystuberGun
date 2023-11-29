@@ -17,7 +17,6 @@ export default function PayrollPage () {
   ]
 
   const handleEdit = () => {
-    console.log(isModalOpen)
     setIsModalOpen(true)
   }
 
