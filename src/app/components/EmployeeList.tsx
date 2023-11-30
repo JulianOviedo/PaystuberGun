@@ -4,6 +4,7 @@ import { deleteEmployee, getEmployees } from '../../services/CRUD'
 import { EmployeeCard } from './EmployeeCard'
 import { Employee } from '(@/types.td)'
 import { useState } from 'react'
+import toast from 'react-hot-toast'
 
 export const EmployeeList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -21,7 +22,8 @@ export const EmployeeList = () => {
     await deleteEmployee(dni)
   }, {
     onSuccess: async () => {
-      await fetchEmployees.refetch() // Refetch the employees after successful deletion
+      await fetchEmployees.refetch()
+      toast.success('Employee Successfully Deleted')
     }
   })
 
@@ -51,7 +53,7 @@ export const EmployeeList = () => {
           const dateFormated = added_at.split('T')[0]
           return (
             <li key={dni} className='flex-shrink-1'>
-              <EmployeeCard name={name} lastName={lastname} dni={dni} added={dateFormated} mail={email} handleEdit={handleEdit} handleDelete={() => deleteMutation.mutate(dni)} />
+              <EmployeeCard name={name} lastName={lastname} dni={dni} added={dateFormated} mail={email} handleEdit={handleEdit} handleDelete={() => deleteMutation.mutate(dni)} isDeleting={deleteMutation.isLoading && deleteMutation.variables === dni} />
             </li>
           )
         })}
